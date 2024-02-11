@@ -1,0 +1,382 @@
+body {
+    
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+/*//////////////////////////////////////////////////////////*/
+/*the font */
+/*/////////////////////////////////////////////////////////*/
+.lato-thin {
+    font-family: "Lato", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  .lato-light {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .lato-regular {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .lato-bold {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .lato-black {
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  .lato-thin-italic {
+    font-family: "Lato", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+  }
+  
+  .lato-light-italic {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  .lato-regular-italic {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .lato-bold-italic {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .lato-black-italic {
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+  }
+  
+body {
+    font-family: lato-regular;
+    margin: 0;
+    padding: 0;
+}
+
+/*//////////////////////////////////////////////////////////*/
+/*the nav styles */
+/*/////////////////////////////////////////////////////////*/
+/* Header Styles */
+header {
+    background-color: #111a1f;
+    color: #fff;
+    padding: 10px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 40px; /* Adjust the size as needed */
+    height: auto;
+    margin-right: 20px;
+}
+
+.logo-text {
+    font-size: 1.2rem; /* Adjust the size as needed */
+}
+
+.menu-icon {
+    display: block;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    position: relative;
+}
+
+.bar {
+    width: 100%;
+    height: 4px;
+    background-color: #ffffff;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+.menu-container {
+    position: relative;
+    margin-right: 10px;
+}
+
+.menu-icon {
+    display: block;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.bar {
+    width: 100%;
+    height: 4px;
+    background-color: #ffffff;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.vertical-menu {
+    display: none;
+    position:absolute;
+    direction: rtl;
+    right: 10px;
+    top: 40px; /* Adjust as needed */
+    
+    background-color:none;
+    padding: 3px;
+    border-radius: 4px;
+    align-items:right ;
+}
+
+.vertical-menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.vertical-menu ul li {
+    margin-bottom: 5px;
+    
+}
+
+.menubutton{
+
+font-family: Roboto, sans-serif;
+font-weight: 400;
+font-size: 14px;
+width: 150px;
+color: #111a1f;
+background-color: #ffffff;
+padding: 10px 30px;
+border: solid #111a1f 2px;
+box-shadow: rgb(0, 0, 0) 0px 11px 14px -12px;
+border-radius: 5px;
+transition : 1000ms;
+transform: translateY(0);
+display: flex;
+flex-direction: row;
+align-items: center;
+cursor: pointer;
+
+}
+
+.menubutton:hover{
+
+transition : 1000ms;
+padding: 10px 50px;
+transform : translateY(-0px);
+background-color: #111a1f;
+color: #ffffff;
+border: solid 2px #111a1f;
+}
+
+/* Rotate animation when toggling menu */
+.change .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-8px, 6px);
+}
+
+.change .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.change .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-6px, -8px);
+}
+/* Show menu when clicking hamburger icon */
+
+/* Media Query for responsive design */
+@media screen and (max-width: 768px) {
+    .logo-text {
+        display: none; /* Hide the text on smaller screens */
+
+    }
+
+    .menu-icon {
+        display: block; /* Display the menu icon */
+    }
+
+    .vertical-menu {
+        display: block; /* Display the vertical menu */
+        position:absolute;
+        top: 100%;
+        right: 0;
+        padding: 10px;
+    }
+
+    .vertical-menu ul li {
+        margin-bottom: 5px;
+    }
+}
+
+
+footer {
+    background-color: #111a1f;
+    color: #fff;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.welcome-text {
+    font-family: Arial, sans-serif; /* Sans-serif font */
+    font-weight: bold; /* Bold font weight */
+    font-size: 24px; /* Adjust the font size as needed */
+    text-align: center; /* Center the text */
+    margin-top: px; /* Add margin for spacing */
+}
+
+.logo {
+    border-radius: 20%; /* Round edges */
+    max-width: 100%; /* Flexible width for phones and PCs */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 80px; /* Set maximum width for PCs */
+    height: auto; /* Allow height to adjust proportionally */
+    
+}
+
+.options {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    margin-top: 50px;
+    flex-direction: column;
+}
+
+.option {
+    width: 23%;
+    margin-top: 10px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+    
+.option:hover {
+    transform: translateY(-5px);
+}
+
+/*//////////////////////////////////////////////////////////*/
+/*the login styles */
+/*/////////////////////////////////////////////////////////*/
+
+/*body {
+    background-image: url('images/Campus_Quad.jpg');
+    background-size: cover; /* Cover the entire background */
+    /* Center the background image */
+
+
+.maincont{
+    max-width: 1000px;
+    max-height: 500px;
+    margin: 70px auto;
+    background-color: rgba(255, 255, 255, 0.3); /* Adjust the alpha value (0.3) for transparency */
+    backdrop-filter: blur(10px); /* Adjust the blur value as needed */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Adjust the shadow as needed */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.login-container {
+    max-width: 700px;
+    min-width: 400px;
+    margin:10px;
+    margin-right: 40px;
+    background-color: #111a1f; /* Adjust the alpha value (0.3) for transparency */
+    backdrop-filter: blur(10px); /* Adjust the blur value as needed */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Adjust the shadow as needed */
+    color:#f0f0f0;
+    display: flexbox;
+}
+.instructions {
+    max-width: 400px;
+    min-width:300px;
+    margin:10px ;
+    background-color: #111a1f; /* Adjust the alpha value (0.3) for transparency */
+    backdrop-filter: blur(10px); /* Adjust the blur value as needed */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Adjust the shadow as needed */
+    color:#f0f0f0;
+    display: flex;
+    flex-direction: column;
+}
+
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.682);
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.682);
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #111a1f;
+    color: #fff;
+    border-style:groove;
+    border-color:#fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #111a1f;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <script src="apps.js"></script>
+    <header>
+        <!-- Header Menu -->
+        <header>
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="images/logo.jpg" alt="Logo" class="logo">
+                    <span class="logo-text"> EUS College</span>
+                </div>
+                <div class="menu-container">
+                    <div class="menu-icon" onclick="toggleMenu()">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                    <nav class="vertical-menu" id="verticalMenu">
+                        <ul>
+                            <li><button class="menubutton"href="">Settings</button></li>
+                            <li><button class="menubutton"href="">language</button></li>
+                            <li><button class="menubutton" href="">Contact</button></li>
+                        </ul>
+                    </nav>
+                </div>                
+            </div>
+        </header>
+        
+    </header>
+
+    <div class="container">
+        <!-- Small Text Div -->
+    
+        <!--<div class="welcome-text">
+            <p>welcome please  login to access the college system</p>
+        </div> -->
+
+                <!-- Options Div -->
+        <div class="options">
+            <button class="option" onclick="window.location.href='stlog.html'">
+                <h2>Student</h2>
+            </button>
+            <button class="option" onclick="window.location.href='stafflog.html'">
+                <h2>Staff</h2>
+            </button>
+            <button class="option" onclick="window.location.href='assolog.html'">
+                <h2>Associate</h2>
+            </button>
+        </div>
+    </div>
+
+    <footer>
+        <!-- Footer Links and Texts -->
+        <p>&copy; 2024 College System. All rights reserved.</p>
+    </footer>
+</body>
+</html>
