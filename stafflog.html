@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- You can link your CSS file here -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-image: url('images/Campus_Quad.jpg');
+background-size: cover;">
+    <script src="apps.js"></script>
+    <header>
+        <!-- Header Menu -->
+        <header>
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="images/logo.jpg" alt="Logo" class="logo">
+                    <span class="logo-text"> EUS College</span>
+                </div>
+                <div class="menu-container">
+                    <div class="menu-icon" onclick="toggleMenu()">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                    <nav class="vertical-menu" id="verticalMenu">
+                        <ul>
+                            <li><button class="menubutton"href="">Settings</button></li>
+                            <li><button class="menubutton"href="">language</button></li>
+                            <li><button class="menubutton" href="">Contact</button></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        
+    </header>
+    <div class="maincont">
+        <div class="login-container">
+            <h2>Staff Login</h2>
+            <form action="Staff_login_process.php" method="post">
+                <div class="form-group">
+                    <label for="Staff-number">Staff Number:</label>
+                    <input type="text" id="Staff-number" name="Staff_number">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password">
+                </div>
+                <div class="form-group">
+                    <label for="security-key">Security Key:</label>
+                    <!-- You can implement the challenging numbers here -->
+                    <input type="text" id="security-key" name="security_key">
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        <div class="instructions">
+            <h2>Staff Login Instructions</h2>
+            <ul>
+                <li><strong>Staff Number:</strong> Find your Staff number on your identification card.</li>
+                <li><strong>Password:</strong> Your initial password will be emailed to your registered email address.</li>
+                <li><strong>Security:</strong> Keep your login credentials private. Create strong passwords and change them regularly.</li>
+                <li><strong>Support:</strong> Contact the school's IT helpdesk for assistance with login issues.</li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <!-- Footer Links and Texts -->
+        <p>&copy; 2024 College System. All rights reserved.</p>
+    </footer>
+</body>
+</html>
