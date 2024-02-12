@@ -380,3 +380,20 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: #111a1f;
 }
+
+.animate_bottom{
+    position: relative;
+    animation: animationBottom 1s;
+}
+
+@keyframes animationBottom{
+    0%{
+        bottom: -300px;
+        opacity: 0;
+    }
+
+    100%{
+        bottom: 0;
+        opacity: 1;
+    }
+}
