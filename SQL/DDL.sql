@@ -15,7 +15,7 @@ CREATE TABLE student(
     gender varchar(10),
     cgpa float,
     image varchar(255) NOT NULL,
-    department int NOT NULL,
+    department int NOT NULL
 );
 
 CREATE TABLE professor(
@@ -24,7 +24,7 @@ CREATE TABLE professor(
     password varchar(60) NOT NULL,
     contact varchar(15) NOT NULL,
     gender ENUM('male', 'female') NOT null,
-    department int NOT NULL,
+    department int NOT NULL
 
 );
 
@@ -33,7 +33,7 @@ CREATE TABLE course(
     name varchar(255) NOT NULL,
     decription text,
     credit_hours int NOT null,
-    `level` int NOT null,
+    `level` int NOT null
 );
 
 CREATE TABLE course_prerequisites(
@@ -52,8 +52,7 @@ CREATE TABLE semester_course(
 	id int PRIMARY KEY AUTO_INCREMENT,
     semester ENUM('fall', 'spring', 'summer') NOT null,
     `year` varchar(4),
-    course_code varchar(10),
-
+    course_code varchar(10)
 );
 
 CREATE TABLE professor_semester_course(
@@ -66,10 +65,10 @@ CREATE TABLE enrollment(
 	grade int,
     semester_course_id varchar(20),
     student_id int,
-    PRIMARY KEY(grade, course_code, student_id)
+    PRIMARY KEY(grade, semester_course_id, student_id)
 );
 
---add forigen keys
+-- add forigen keys
 alter table student
 add FOREIGN KEY(department) REFERENCES department(dept_code);
 
@@ -80,7 +79,7 @@ alter table professor_semester_course
 add FOREIGN KEY(professor_ssn) REFERENCES professor(ssn);
 
 alter table professor_semester_course
-add FOREIGN KEY(course_code) REFERENCES semester_course(id);
+add FOREIGN KEY(semester_course_id) REFERENCES semester_course(id);
 
 alter table course_prerequisites
 add FOREIGN KEY(course_code) REFERENCES course(course_code);
@@ -92,7 +91,7 @@ alter table semester_course
 add FOREIGN KEY(course_code) REFERENCES course(course_code);
 
 alter table enrollment
-add FOREIGN KEY(course_code) REFERENCES course(course_code);
+add FOREIGN KEY(semester_course_id) REFERENCES semester_course(course_code);
 
 alter table enrollment
 add FOREIGN KEY(student_id) REFERENCES student(id);
