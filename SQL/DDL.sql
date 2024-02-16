@@ -8,6 +8,7 @@ CREATE TABLE department(
 CREATE TABLE student(
 	id int AUTO_INCREMENT PRIMARY KEY,
     name varchar(255) NOT NULL,
+    password varchar(60) NOT NULL,
     ssn varchar(20) NOT NULL,
     contact varchar(15) NOT NULL,
     birthdate date NOT NULL,
@@ -15,16 +16,16 @@ CREATE TABLE student(
     cgpa float,
     image varchar(255) NOT NULL,
     department int NOT NULL,
-    FOREIGN KEY(department) REFERENCES department(dept_code)
 );
 
 CREATE TABLE professor(
 	ssn varchar(20) PRIMARY KEY,
     name varchar(255) NOT NULL,
+    password varchar(60) NOT NULL,
     contact varchar(15) NOT NULL,
     gender ENUM('male', 'female') NOT null,
     department int NOT NULL,
-    FOREIGN KEY(department) REFERENCES department(dept_code)
+
 );
 
 CREATE TABLE course(
@@ -33,41 +34,31 @@ CREATE TABLE course(
     decription text,
     credit_hours int NOT null,
     `level` int NOT null,
-    department int NOT NULL,
-    FOREIGN KEY(department) REFERENCES department(dept_id)
 );
 
 CREATE TABLE course_prerequisites(
 	course_code varchar(10) NOT NULL,
     prerequisite_code varchar(10) NOT NULL,
-    FOREIGN KEY(courss_code) REFERENCES course(course_code),
-    FOREIGN KEY(prerequisite_code) REFERENCES course(course_code),
     PRIMARY KEY(course_code, prerequisite_code)
 );
 
-CREATE TABLE dept_code(
+CREATE TABLE dept_course(
 	course_code varchar(10),
     dept_code int,
-    FOREIGN KEY(course_code) REFERENCES course(course_code),
-    FOREIGN KEY(dept_code) REFERENCES department(dept_code),
     PRIMARY KEY(course_code, dept_code)
 );
 
 CREATE TABLE semester_course(
 	id int PRIMARY KEY AUTO_INCREMENT,
-    professor_ssn varchar(20) NOT NULL,
     semester ENUM('fall', 'spring', 'summer') NOT null,
     `year` varchar(4),
     course_code varchar(10),
-    FOREIGN KEY(course_code) REFERENCES course(course_code),
-    FOREIGN KEY(professor_ssn) REFERENCES professor(ssn)
+
 );
 
 CREATE TABLE professor_semester_course(
 	professor_ssn varchar(20),
     semester_course_id int,
-    FOREIGN KEY(semester_course_id) REFERENCES semester_course(id),
-    FOREIGN KEY(professor_ssn) REFERENCES professor(ssn),
     PRIMARY KEY(professor_ssn, semester_course_id)
 );
 
@@ -75,10 +66,44 @@ CREATE TABLE enrollment(
 	grade int,
     semester_course_id varchar(20),
     student_id int,
-    FOREIGN KEY(student_id) REFERENCES student(id),
-    FOREIGN KEY(semester_course_id) REFERENCES semester_course(id),
     PRIMARY KEY(grade, course_code, student_id)
 );
+
+--add forigen keys
+alter table student
+add FOREIGN KEY(department) REFERENCES department(dept_code);
+
+alter table professor
+add FOREIGN KEY(department) REFERENCES department(dept_code);
+
+alter table professor_semester_course
+add FOREIGN KEY(professor_ssn) REFERENCES professor(ssn);
+
+alter table professor_semester_course
+add FOREIGN KEY(course_code) REFERENCES semester_course(id);
+
+alter table course_prerequisites
+add FOREIGN KEY(course_code) REFERENCES course(course_code);
+
+alter table course_prerequisites
+add FOREIGN KEY(prerequisite_code) REFERENCES course(course_code);
+
+alter table semester_course
+add FOREIGN KEY(course_code) REFERENCES course(course_code);
+
+alter table enrollment
+add FOREIGN KEY(course_code) REFERENCES course(course_code);
+
+alter table enrollment
+add FOREIGN KEY(student_id) REFERENCES student(id);
+
+alter table dept_course
+add FOREIGN KEY(course_code) REFERENCES course(course_code);
+
+alter table dept_course
+add FOREIGN KEY(dept_code) REFERENCES department(dept_code);
+ 
+
 
 -- the longest phone number has 13 digits, so 15 are more than enough
 -- dept_code will be only integer of maximum two digits
