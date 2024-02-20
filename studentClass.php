@@ -97,7 +97,7 @@ class student{
         return $this->department;
     }
 
-    function addCourse(/*todo : Course*/$course) {
+    function addCourse($id, $cours_code) {
         //add courseId to courses list
         //insert  into enrolmen table with student_id,and course_id
     }
